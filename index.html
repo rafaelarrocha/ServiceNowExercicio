@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styledoindex.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow</title>
+</head>
+<body>
+    <div class="tudo" id="tudo">
+        <div class="quadrado" id="quadrado">
+            <h1>Eu quero muuuuito dar certo com a ServiceNow!</h1>
+            <p>E pra isso, eu vou me esforçar. Aprender não é o meu problema, e todos tiveram o seu começo. <br> Esse é o meu. Vamos dar uma olhada?</p>
+            <button id="comecar" onclick="oi()">COMEÇAR</button>
+        </div>
+
+        <div class="quadrado2" id="quadrado2" style="display: none;">
+            <h1>Eu reuni tudo o que não soube responder...</h1>
+            <p>neste exemplo! Tente utilizar a lista de compras</p>
+        
+            <div class="container-frutas">
+                <div id="lista-de-frutas">
+                    <h2>Frutas</h2>
+                    <div class="conteudo-da-lista">
+                        <ul id="lista-frutas"></ul>
+                    </div>
+                </div>
+                <div id="botoes-lista">
+                    <input type="text" id="nova-fruta">
+                    <button onclick="adicionarFruta()">Adicionar Fruta</button>
+                    <button onclick="mostrarTamanho()">Mostrar Tamanho do Array</button>
+                    <button onclick="mostrarQuintoElemento()">Mostrar Quinto Elemento</button>
+                    <button onclick="imprimirAoContrario()">Imprimir Lista ao Contrário</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sapinhofeliz"></div>
+
+    <script>
+        function verificarNome() {
+            let divSapinhos = document.getElementById('sapinhofeliz');
+            let nome = prompt('Digite seu primeiro nome');
+            let container = document.getElementById('tudo');
+        
+            if (nome !== null && nome !== "") {
+                divSapinhos.innerHTML = "<h1>Seja muito bem-vindo, " + nome + "!</h1>" +
+                                         "<img src='sapinho.gif' alt='sapo dançando'>";
+                divSapinhos.style.display = 'block';
+        
+                setTimeout(function() {
+                    divSapinhos.style.display = 'none';
+                    container.style.display = 'block';
+                }, 3000);
+            }
+        }
+
+        window.onload = verificarNome;
+
+
+        function addTrim() {
+            let input = document.getElementById('inputTrim');
+            const trimmedValue = input.value.trim();
+            input.value = trimmedValue;
+        }
+
+        var comecar = document.getElementById('comecar');
+        var pagUm = document.getElementById('quadrado');
+        var pagDois = document.getElementById('quadrado2');
+        var avançar = document.getElementById('btnAvancar');
+        var voltar = document.getElementById('btnVoltar');
+
+        function oi() {
+            pagUm.style.display = 'none';
+            pagDois.style.display = 'contents';
+        }
+
+        function definirEstiloMouseOver(event) {
+            event.target.style.backgroundColor = '#df732b';
+            event.target.style.color = '#fff';
+        }
+
+        function restaurarEstiloMouseOut(event) {
+            event.target.style.backgroundColor = '';
+            event.target.style.color = '';
+        }
+
+        var botoes = document.querySelectorAll('#botoes-lista button');
+
+        botoes.forEach(function(botao) {
+            botao.addEventListener('mouseover', definirEstiloMouseOver);
+            botao.addEventListener('mouseout', restaurarEstiloMouseOut);
+        });
+
+        let frutas = ["maçã", "banana", "laranja"];
+        const listaFrutas = document.getElementById('lista-frutas');
+
+        function adicionarFruta() {
+            const novaFrutaInput = document.getElementById('nova-fruta');
+            const novaFrutaValor = novaFrutaInput.value.trim();
+        
+            if (novaFrutaValor && frutas.length < 9) {
+                frutas.push(novaFrutaValor);
+                atualizarListaFrutas();
+                novaFrutaInput.value = '';
+            } else if (frutas.length >= 9) {
+                alert("O limite de 9 frutas foi atingido.");
+            }
+        }
+
+        function atualizarListaFrutas() {
+            listaFrutas.innerHTML = '';
+            frutas.forEach(fruta => {
+                const itemLista = document.createElement('li');
+                itemLista.textContent = fruta;
+                listaFrutas.appendChild(itemLista);
+            });
+        }
+
+        function mostrarTamanho() {
+            alert("Tamanho do Array: " + frutas.length);
+        }
+
+        function mostrarQuintoElemento() {
+            if (frutas.length >= 5) {
+                alert("Quinto Elemento do Array: " + frutas[4]);
+            } else {
+                alert("O array não possui um quinto elemento.");
+            }
+        }
+
+        function imprimirAoContrario() {
+            const frutasAoContrario = frutas.slice().reverse();
+            alert("Lista de Frutas ao Contrário: " + frutasAoContrario.join(', '));
+        }
+
+        atualizarListaFrutas();
+    </script>
+</body>
+</html>

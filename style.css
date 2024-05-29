@@ -1,0 +1,195 @@
+
+body{
+    background-color: #df732b;
+    background: linear-gradient(to right, #adadad,#ecebec);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tudo{
+
+    display: none;
+    padding: 50px;
+    width: 70%;
+    height: 400px;
+    background-color: rgb(227, 233, 233);
+    border-radius: 39px 15px 40px 15px;
+    box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+.quadrado button{
+    position: relative;
+    top: 20%;
+    border: none;
+    background-color: #be6d10;
+    padding: 15px;
+    border-radius: 40px;
+    cursor: pointer;
+    color: antiquewhite;
+    font-size: 15px;
+    font-weight: 600;
+    overflow: hidden;
+    width: 20%;
+    margin-top: 80px;
+}
+
+.quadrado2 h1{
+    text-align: center;
+}
+    
+.quadrado2{
+    
+    letter-spacing: 1px;
+    
+}
+
+.pega-pega {
+
+    display: flex;
+    background-color: #be6d10;
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.toggle-painel{
+
+    display: flex;
+    width: 100px;
+    background-color: purple;
+    width: 300px;
+    height: 100px;
+    
+
+}
+
+#carinha-na-direita, #carinha-na-esquerda {
+
+    width: 30px;
+    height: 30px;
+}
+
+
+.informacoes{
+    width: 450px;
+    height: auto;
+}
+
+.fotodeperfil{
+    margin-top: 50px;
+    width: 4cm;
+    height: 5,5cm;
+    border-radius: 100%;
+    border:  3px;
+    border-style:dashed;
+    transform: scale(1.5);
+
+}
+
+
+
+
+
+
+.quadrado2 {
+
+
+
+    display: none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin-top: 6%;
+    flex-wrap: wrap;
+    font-size: 13px;
+
+    
+}
+
+.quadrado2  h1{
+
+    margin-top: 40px;
+
+}
+.btns {
+    position: relative;
+    top: 20%;
+    border: none;
+    background-color: #be6d10;
+    border-radius: 100%;
+    cursor: pointer;
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: 600;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+}
+
+.quadrado3 {
+
+    display: none;
+}
+
+#lista-de-frutas {
+
+    width: 300px;
+    height: 80%;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+    background-color: #fff;
+    
+
+}
+
+#lista-de-frutas h2{
+
+    background-color:#df732b;
+    color: #fff;
+}
+
+.conteudo-da-lista {
+
+    position: relative;
+    width: 120px;
+    height: 80%;
+
+    
+}
+
+#botoes-lista{
+
+    width: 35%;
+}
+
+#botoes-lista button{
+
+
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid #df732b;
+    padding: 10px;
+    background-color: transparent;
+    color: #df732b;
+
+    margin-top: 20px;
+}
+
+.container-frutas {
+
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
